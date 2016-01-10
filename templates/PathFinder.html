@@ -4,6 +4,23 @@
     <title>URL-Shortener</title>
 </head>
 <body>
-  <p>test</p>
+<script>
+    $(function () {
+        alert('Im going to start processing');
+
+        $.ajax({
+            url: "saveList.py",
+            type: "post",
+            data: JSON.stringify({'param': {"hello": "world"}}),
+            dataType: "json",
+            success: function (response) {
+                alert(response);
+            }
+        });
+    });
+</script>
+
+
+<p>test</p>
 </body>
 </html>

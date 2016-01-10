@@ -8,6 +8,7 @@ app_url = ''
 app = Flask(__name__)
 app.secret_key = '$a82sd7DS35gfs*@#DSc'
 
+
 app.debug = True
 app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 #
@@ -18,7 +19,7 @@ app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 @app.route(app_url + '/', methods=['POST','GET'])
 def index():
-
+    return render_template('PathFinder.html');
 
 
 if __name__ == '__main__':
